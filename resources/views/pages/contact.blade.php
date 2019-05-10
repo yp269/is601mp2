@@ -12,8 +12,8 @@
     <!-- Styles -->
     <style>
         html, body {
-            background-color: #ede6ef;
-            color: #3a81a5;
+            background-color: #D6E3DA;
+            color: #157fb5;
             font-family: 'Nunito', sans-serif;
             font-weight: 200;
             height: 100vh;
@@ -85,7 +85,40 @@
 
         <br>
 
-        <h1>I am a Finance student at NJIT. This is my second Laravel Project.</h1>
+        <div class='card mt-4 pl-5 pr-5'>
+            <div class='card'>
+
+                <div class='card-title'><h1>Contact Page</h1>
+                    <p class="lead">Please fill out the below form to contact site owner.</p>
+
+                    <form method="post" action="{{route('contact.store')}}" >
+                        @csrf
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col">
+                                    <input name = 'first_name' type="text" class="form-control" id = 'first_name' placeholder="First Name" required>
+                                </div>
+                                <div class="col">
+                                    <input name = 'last_name' type="text" class="form-control" id = 'last_name' placeholder="Last Name" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email"></label>
+                            <input name='email' type="email" class="form-control" id="email" placeholder="Email Address" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="body"></label>
+                            <textarea name='body' class="form-control" id="message" rows="3" placeholder="Type your inquiry here..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+
+                    </form>
+                </div>
+            </div>
 
 </body>
 </html>
